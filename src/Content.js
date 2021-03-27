@@ -8,9 +8,13 @@ export default function Content(props) {
     const{name, exercises}=part1
     return(
         <div>
-            <Part enunciado={name} num={exercises} />
-            <Part enunciado={part2.name} num={part2.exercises} />
-            <Part enunciado={part3.name} num={part3.exercises} />
+         {
+             props.parts.map((ejem, index) => {
+                 return(
+                     <Part enunciado={ejem.name} num={ejem.exercises}></Part>
+                 );
+             })
+         }
         </div>
-    );
+    )
 }
